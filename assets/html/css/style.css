@@ -936,13 +936,22 @@ font-size: 20px;
 }
 
 .grid-pic {
+/*
+    position: absolute;
+    bottom: 0;
+    */
     padding-top: 8px;
     padding-bottom: 8px;
     width: 215px;
-    height: 265px;
     margin: auto;
     border: 1px solid #E6E6E6;
     background-color: white;
+    height: 247px;
+    
+    -webkit-transition: width 0.5s;
+    transition: height 0.5s;
+    
+/*
     display: block;
     opacity: 1;
     -webkit-transform: scale(1,1);
@@ -951,23 +960,50 @@ font-size: 20px;
     -moz-transform: scale(1,1);
     -moz-transition-timing-function: ease-out;
     -moz-transition-duration: 550ms;
+*/
+    
 }
 
 .grid-pic:hover {
     box-shadow:0px 1px 14px 2px rgba(128,128,128,0.39);
-        -webkit-box-shadow:0px 1px 14px 2px rgba(128,128,128,0.39);
-        -moz-box-shadow:0px 1px 14px 2px rgba(128,128,128,0.39);
-    -webkit-transform: scale(1.2,1.0);
+    -webkit-box-shadow:0px 1px 14px 2px rgba(128,128,128,0.39);
+    -moz-box-shadow:0px 1px 14px 2px rgba(128,128,128,0.39);
+    height: 275px;
+    
+/*
+    -webkit-transform: scale(1.05,1.05);
     -webkit-transition-timing-function: ease-out;
     -webkit-transition-duration: 550ms;
-    -moz-transform: scale(1.2,1.2);
+    -moz-transform: scale(1.05,1.05);
     -moz-transition-timing-function: ease-out;
     -moz-transition-duration: 550ms;
+*/
+}
+
+.order-button {
+    font-family: 'Oswald';
+    margin-top: 8px;
+    width: 100px;
+    height: 27px;
+    color: white;
+    background-color: #A7C90E;
+    font-size: 19px;
+/*    visibility: hidden;*/
+    opacity: 0.0;
+    transition: opacity 300ms;
+    transition-delay: 100ms;
+}
+
+.grid-pic-container {
+    height: 247px;
+    position: relative;
 }
 
 .grid-pic:hover .order-button-visi {
-    visibility: visible;
+/*    visibility: visible;*/
+    opacity: 1.0;
 }
+
 
 .grid-pic-cost {
     display: inline-block; 
@@ -1063,13 +1099,6 @@ font-size: 20px;
     padding-bottom: 30px;
 }
 
-.order-button {
-    font-family: 'Oswald';
-    margin-top: 5px;
-    width: 100px;
-    height: 27px;
-    color: white;
-    background-color: #A7C90E;
-    font-size: 19px;
-    visibility: hidden;
-}
+
+
+
