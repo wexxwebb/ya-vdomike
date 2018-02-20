@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>[[*pagetitle]]</title>
+    <meta name="description" content="">
+    
+<!--    <meta name="viewport" content="width=720, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+
+
+
+    <!-- Bootsrap -->
+    <!--        <link rel="stylesheet" href="css/bootstrap.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/html/css/style.css">
+    <link rel="stylesheet" href="assets/components/fancybox/jquery.fancybox.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marmelad" rel="stylesheet">
+</head>
+<body>
+    <div class="">
+        <div class="wrap">
+            [[!FormIt?
+                &hooks=`email, order`
+                &emailFrom=`info@ya-vdomike.ru`
+                &emailTpl=`emailOrderTpl`
+                &emailSubject=`Заказ на сайте Я в Домике`
+                &emailTo=`a.kretow@ya.ru, kretow@bk.ru`
+                &validate=`username:required,
+                           email:required,
+                           phone_num:required,
+                           type:required`]]
+            <form action="[[~2]]" method="post">
+                <div class="order-h marmelad center">Оставте контакты и мы Вам перезвоним!</div>
+                <div class="input-div center "><input name="username" placeholder="Имя" class="input-order" type="text" value="[[+fi.username]]"></div>
+                <div class="warning">[[!+fi.error.username]]</div>
+                <div class="input-div center"><input name="phone_num" placeholder="Телефон" class="input-order" type="phone" value="[[+fi.phone_num]]"> </div>
+                <div class="warning">[[!+fi.error.phone_num]]</div>
+                <input type="hidden" name="type" value="[[!Complect]]">
+                <div class="input-div center"><input name="email" placeholder="Электронная почта" class="input-order" type="email" value="[[+fi.email]]"> </div>
+                <div class="warning">[[!+fi.error.email]]</div>
+                <div class="submit-button center">
+                    <button class="sub-image" type="submit">
+                        <img style="width: 70%" src="assets/html/image/call-invoke.png">
+                    </button>
+                </div>
+                <div class="text oswald">Нажимая кнопку «Заказать звонок», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных</div>
+            </form>
+        </div>
+    </div>   
+</body>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter46800120 = new Ya.Metrika({
+                        id:46800120,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true
+                    });
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/46800120" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+</html>
